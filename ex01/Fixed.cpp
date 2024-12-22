@@ -6,7 +6,7 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:23:10 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/22 18:47:59 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/22 19:33:58 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 Fixed::Fixed(void) {
     std::cout << GREEN << "Default constructor called" << RESET << std::endl;
     this->_nb = 0.0;
+}
+
+Fixed::Fixed(const int& nb) {
+    std::cout << CYAN << "Int constructor called" << RESET << std::endl;
+}
+
+Fixed::Fixed(const float& nb) {
+        std::cout << CYAN << "Float constructor called" << RESET << std::endl;
+
 }
 
 Fixed::Fixed(const Fixed& other) {
@@ -41,5 +50,11 @@ void Fixed::setRawBits(int const raw) {
     std::cout << GREEN << "setRawBits member function called" << RESET << std::endl;
     this->_nb = raw;
 }
+
+
+int Fixed::toInt(void) const {}
+
+float Fixed::toFloat(void) const {}
+
 
 const int Fixed::_bits = 8;
