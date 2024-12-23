@@ -6,7 +6,7 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 14:57:29 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/22 19:34:02 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:33:22 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <cmath>
 
- # define RED     "\x1b[31m"
+ # define RED    "\x1b[31m"
 # define GREEN   "\x1b[32m"
 # define YELLOW  "\x1b[33m"
 # define BLUE    "\x1b[34m"

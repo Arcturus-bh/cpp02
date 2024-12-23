@@ -6,11 +6,13 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:23:10 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/22 19:33:58 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:40:06 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_bits = 8;
 
 Fixed::Fixed(void) {
     std::cout << GREEN << "Default constructor called" << RESET << std::endl;
@@ -19,10 +21,12 @@ Fixed::Fixed(void) {
 
 Fixed::Fixed(const int& nb) {
     std::cout << CYAN << "Int constructor called" << RESET << std::endl;
+    this->_nb = nb << this->_bits;
 }
 
 Fixed::Fixed(const float& nb) {
         std::cout << CYAN << "Float constructor called" << RESET << std::endl;
+        this->_nb = roundf(nb * (1 << this->_bits));
 
 }
 
@@ -51,10 +55,10 @@ void Fixed::setRawBits(int const raw) {
     this->_nb = raw;
 }
 
+int Fixed::toInt(void) const {
+    return this->_nb << this->_bits;
+}
 
-int Fixed::toInt(void) const {}
-
-float Fixed::toFloat(void) const {}
-
-
-const int Fixed::_bits = 8;
+float Fixed::toFloat(void) const {
+    return ((float)this->_nb / (float)(1 << this->_bits));
+}
