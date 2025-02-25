@@ -6,7 +6,7 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:23:10 by aldalmas          #+#    #+#             */
-/*   Updated: 2025/02/24 17:03:01 by aldalmas         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:27:09 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ Fixed::Fixed(const float& nb) {
     this->_nb = roundf(nb * (1 << this->_bits));
 }
 
-Fixed::Fixed(const Fixed& other) : _nb(other._nb) {
+Fixed::Fixed(const Fixed& other) {
     std::cout << YELLOW << "Copy constructor called" << RESET << std::endl;
+    *this = other;
 }
 
 Fixed::~Fixed(void) {
